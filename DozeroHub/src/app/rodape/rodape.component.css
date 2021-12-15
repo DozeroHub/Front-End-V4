@@ -15,16 +15,8 @@ ul.social-network li{
   padding: 10px;
 }
 
-.fa-facebook-square:hover{
-  color: black;
-}
-
-.fa-linkedin:hover{
-  color: black;
-}
-
 .fa-github-square:hover{
-  color: black;
+  color: #7132FF;
 }
 
 
