@@ -35,4 +35,12 @@ export class AuthService {
     }
     return ok
   }
+    deslogado(){
+    let ok = true
+
+    if(environment.token != ""){
+      ok = false
+    }
+  return ok
+  }
 }
