@@ -1,15 +1,30 @@
-<div class="d-flex flex-column flex-shrink-0 bg-dark vh-100" style="width: 100px;">
-  <div class="border-top"> <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"> <img src="{{foto}}" alt="mdo" width="40px" height="40px" class="rounded-circle"> </a>
-  <p class="m-0 fw-bolder text-white  text-center" id="nomesidebar">{{nome}}</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <div class="container-fluid">
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+        <li class="nav-item">
+          <img src="{{foto}}"
+            alt="Imagem de Perfil" width="50px" height="50px" class="img-fluid rounded-circle">
+        </li>
+        <li class="nav-item p-3">
+          <p class="m-0 fw-bolder text-white fs-16">Olá, {{nome}}</p>
+        </li>
+        <li class="nav-item p-3">
+          <a href="">
+            <p class="text-white fs-16 m-0"><i class="fa fa-edit"></i></p>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 d-flex align-items-center">
+        <li class="nav-item p-3">
+          <a (click)="sair()" class="m-0 fw-bolder text-white fs-16"> Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-
-      <li> <a href="#" class="nav-link py-3 border-bottom text-white" data-toggle= "modal" data-target="#novaPostagem"> <i class="fa fa-pencil"></i> <small>Escreva</small> </a> </li>
-
-      <li> <a href="#postagens" class="nav-link py-3 border-bottom text-white "> <i class="fa fa-binoculars"></i> <small>Ver Postagens</small> </a> </li>
-      <li> <a href="#" class="nav-link py-3 border-bottom text-white"> <i class="fa fa-folder-open"></i> <small>O projeto</small> </a> </li>
-      <li> <a href="#" class="nav-link py-3 border-bottom text-white"> <i class="fa fa-envelope"></i> <small>Entre em contato</small> </a> </li>
-      <li> <a href="#" class="nav-link py-3 border-bottom text-white" (click)="sair()"> <i class="fa fa-sign-out"></i> <small>Sair</small> </a> </li>
-  </ul>
-</div>
+</nav>
