@@ -1,44 +1,30 @@
-
-
 <div class="container-fluid">
 
-  <div class="row d-flex align-items-center" id="body">
+  <div class="row d-flex align-items-center">
     <div class="col-md-6">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-6 card" style="width: 25rem; height: 35rem;">
-
-             
-
-          <div id=""class="form-group text-black">
-          
-          <img  id="img" class="text-center rounded mx-auto d-block padding-top" src="../../assets/Group.png"  alt="">
-           
+        <div class="col-md-6">
+          <h1 class="text-center mb-3">Entrar</h1>
+          <div class="form-group">
             <label for="usuario">E-mail</label>
-            <input [(ngModel)]="UserLogin.usuario" class="form-control" type="text" name="usuario" id="usuario"
-              placeholder="Seu e-mail">
+            <input [(ngModel)]="UserLogin.usuario" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu e-mail">
           </div>
-          <div class="form-group mt-3 text-black">
+          <div class="form-group mt-3">
             <label for="senha">Senha</label>
-            <input [(ngModel)]="UserLogin.senha" class="form-control" type="password" name="senha" id="senha"
-              placeholder="Sua senha">
+            <input [(ngModel)]="UserLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
           </div>
           <div class="d-flex justify-content-center mt-3">
-            <button type="submit" class="btn" (click)="entrar()">LOGIN</button>
+            <button type= "submit" class="btn btn-success" (click)="entrar()" >Entrar</button>
           </div>
-          <div class="mt-5 mb-5 "></div>
-          <p class="text-center">Não tem uma conta?</p>
-          <p class="text-center"><a routerLink="/cadastrar">Inscreva-se no Do Zero hub hoje mesmo!</a></p>
-
-
-
+          <hr class="mt-5 mb-5">
+          <p class = "text-center">Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a></p>
         </div>
 
       </div>
     </div>
-    <div class="col-md-6 d-none d-md-block" id="img-bg">
+    <div class="col-md-6 d-none d-md-block" id="img-bg" >
 
     </div>
 
   </div>
 </div>
-
