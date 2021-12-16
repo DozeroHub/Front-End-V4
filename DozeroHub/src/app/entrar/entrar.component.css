@@ -1,5 +1,20 @@
 
 
+
+
+
+
+#img{
+  height: 44%;
+  width: 20%;
+  margin-top: 25px
+
+}
+
+.ponto{
+ list-style-type: none;
+}
+
 #img-bg{
   background-image: url('../../assets/8qIqzO5.jpg');
   min-height: 840px;
@@ -8,3 +23,31 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#color{
+  color:blueviolet;
+}
+
+#body{
+  background-color: #7132FF;
+}
+
+.btn {
+
+  font-family: 'Work Sans', sans-serif;
+  color: #ffffff;
+  width: 350px;
+  height: 43px;
+  left: 906px;
+  top: 523px;
+  background-color: #04C35C;
+  border-radius: 8px;
+}
+
+
+
+
+.form-group{
+  color:aliceblue;
+}
+

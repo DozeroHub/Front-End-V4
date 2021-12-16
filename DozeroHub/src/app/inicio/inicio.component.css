@@ -1,15 +1,7 @@
-/*---------------
-Zerando as configurações do CSS
---------------- */
-
-* {
-padding:0;
-margin:0;
-vertical-align:baseline;
-list-style:none;
-
+.fs-54{
+  font-size: 54pt;
 }
 
-/*---------------
-Configurações do CARD de informação
---------------- */
+.fs-18{
+  font-size: 18pt;
+}
