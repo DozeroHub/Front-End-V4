@@ -1,9 +1,9 @@
 #img-bg{
-  background-image: url('../../assets/imagem1.jpg');
+  background-image: url('../../assets/img-cadastrar.svg');
 
 
-  min-height: 842px;
-  max-height: 843px;
+  min-height: 640px;
+  max-height: 641px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
