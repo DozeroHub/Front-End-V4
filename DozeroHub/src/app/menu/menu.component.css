@@ -7,4 +7,11 @@ a{
   text-decoration: none;
 }
 
+#menu{
+  background-color: #7132FF;
+}
+.fa{
+  padding: 17px;
+  color: black;
+}
 

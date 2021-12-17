@@ -1,7 +1,7 @@
 <!-- Estilização do menu no componente Menu -->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-1 m-0">
+    <div class="col-md-1 m-0 p-0 mt-0">
       <app-menu></app-menu>
     </div>
 
@@ -11,8 +11,8 @@
 
         <!--Jumbotron-->
 
-        <div class="jumbotron">
-          <h1 class="display-4">Sejam Bem-vindes!</h1>
+        <div class="jumbotron bg-white">
+          <h1 class="display-4">Sejam bem-vindes!</h1>
           <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
             featured content or information.</p>
           <hr class="my-4">
@@ -27,29 +27,28 @@
 
       <div class="container-fluid mb-5 mt-5" id="postagens">
 
-        <nav>
-          <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-
-            <a class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"
-              href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as
-              Postagens</a>
-
-            <a (click)="findByIdUsuario()" class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab"
-              data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
-              aria-selected="false">Minhas
-              Postagens</a>
-
-            <a class="nav-link text-secondary font-weight-bold" id="nav-postagensTema-tab" data-toggle="tab"
-              href="#postagensTema" role="tab" aria-controls="nav-postagensTema" aria-selected="false">Postagens por
-              Tema</a>
-
-          </div>
-        </nav>
-
-        <div class="tab-content mt-5" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
-            aria-labelledby="nav-todasPostagens-tab">
-
+        <!--Tabs-->
+        <ul class="nav nav-pills d-flex justify-content-center mb-3 " id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active btn-dark" id="pills-todasPostagens-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-todasPostagens" type="button" role="tab" aria-controls="pills-todasPostagens"
+              aria-selected="true">Todas as
+              Postagens</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button (click)="findByIdUsuario()" class="nav-link btn-dark" id="pills-minhasPostagens-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-minhasPostagens" type="button" role="tab" aria-controls="pills-minhasPostagens"
+              aria-selected="false">Minhas Postagens</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-dark" id="pills-postagensTema-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-postagensTema" type="button" role="tab" aria-controls="pills-postagensTema"
+              aria-selected="false">Postagens por Tema</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-todasPostagens" role="tabpanel"
+            aria-labelledby="pills-todasPostagens-tab">
             <div class="card-columns">
               <div class="card text-center" *ngFor="let item of listaPostagens">
                 <div class="card-body">
@@ -63,9 +62,10 @@
               </div>
             </div>
 
-          </div>
 
-          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+          </div>
+          <div class="tab-pane fade" id="pills-minhasPostagens" role="tabpanel"
+            aria-labelledby="pills-minhasPostagens-tab">
             <div class="card-columns">
               <div class="card text-center" *ngFor="let user of user.postagem">
                 <div class="card-body">
@@ -80,8 +80,7 @@
               </div>
             </div>
           </div>
-
-          <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
+          <div class="tab-pane fade" id="pills-postagensTema" role="tabpanel" aria-labelledby="pills-postagensTema-tab">
             <div class="card-columns" *ngFor="let tema of listaTemas">
               <div class="card text-center" *ngFor="let item of tema.postagem">
                 <div class="card-body">
@@ -93,9 +92,11 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
+        <!--/Tabs-->
+
+
 
         <!-- Modal -->
         <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -144,7 +145,7 @@
 
         <div class="row mt-5">
           <div class="col-md-12">
-            <h2 class="text-center">Todos os Temas</h2>
+            <h2 class="text-center">Temas</h2>
           </div>
         </div>
 
@@ -154,18 +155,15 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Descrição</th>
-                  <th scope="col" class="text-right">Modificações</th>
+
+                  <th class="text-center text-secondary" scope="col">Descrição</th>
 
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor='let tema of listaTemas'>
-                  <th>{{tema.id}}</th>
-                  <td>{{tema.descricao}}</td>
-                  <td class="d-flex justify-content-end">
-                    <button class="btn btn-info mr-3" ><a href="#postagensTema">Ver Tema</a></button>
+
+                  <td class="text-center">{{tema.descricao}}</td>
 
                 </tr>
               </tbody>
@@ -174,20 +172,20 @@
         </div>
 
         <!-- Card de informações -->
-          <div class= "container md-2 d-flex justify-content-center">
+        <div class="container md-2 d-flex justify-content-center">
 
-            <div class="card text-center" s tyle="width: 18rem;">
-              <div class="card-body">
-               <h5 class="card-title">Portal do EMPREENDEDOR</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Como se regularizar<s></s></h6>
-                <p class="card-text">O site do Portal do empreendedor oferece diversos recursos para você se form.</p>
-                <a href="#" class="card-link">Saiba Mais</a>
-              </div>
+          <div class="card text-center" s tyle="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Portal do EMPREENDEDOR</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Como se regularizar<s></s></h6>
+              <p class="card-text">O site do Portal do empreendedor oferece diversos recursos para você se form.</p>
+              <a href="#" class="card-link">Saiba Mais</a>
             </div>
-
           </div>
 
-          <!-- /Card de informações -->
+        </div>
+
+        <!-- /Card de informações -->
 
       </div>
     </div>
