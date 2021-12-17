@@ -27,3 +27,8 @@
   .topnav .icon {
     display: none;
   }
+
+  .dozero{
+    font-weight: bold;
+    font-size: 17px;
+  }
