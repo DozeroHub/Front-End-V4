@@ -7,11 +7,11 @@
 
     <!--Pagina do feed-->
     <div class="col-md-8">
-      <div class="container-fluid">
-
+      <div class="container-fluid text-center">
+        <img src="../../assets/Social-tree-looping.gif" width="300px" height="300px" alt="Imagem Inicio">
         <!--Jumbotron-->
 
-        <div class="jumbotron bg-white m-0">
+        <div class="jumbotron bg-white m-0 p-0">
           <h1 class="display-4">Sejam bem-vindes!</h1>
           <p class="lead">A rede social DoZero hub foi desenvolvida com o objetivo de promover o contato entre empreendedores que buscam aprender mais sobre gestão de negócios. Fique a vontade para fazer seu networking!</p>
           <hr class="my-4">
@@ -40,7 +40,7 @@
               aria-selected="false">Minhas Postagens</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link btn-dark" id="pills-postagensTema-tab" data-bs-toggle="pill"
+            <button (click)="getAllTemas()" class="nav-link btn-dark" id="pills-postagensTema-tab" data-bs-toggle="pill"
               data-bs-target="#pills-postagensTema" type="button" role="tab" aria-controls="pills-postagensTema"
               aria-selected="false">Postagens por Tema</button>
           </li>
@@ -48,7 +48,6 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-todasPostagens" role="tabpanel"
             aria-labelledby="pills-todasPostagens-tab">
-            <div class="card p-1">
               <div class="mt-3 card text-center" *ngFor="let item of listaPostagens">
                 <div class="row">
                   <div class="col-md-12">
@@ -64,34 +63,45 @@
               </div>
             </div>
               </div>
-            </div>
           </div>
           <div class="tab-pane fade" id="pills-minhasPostagens" role="tabpanel"
             aria-labelledby="pills-minhasPostagens-tab">
-            <div class="card-columns">
-              <div class="card text-center" *ngFor="let user of user.postagem">
-                <div class="card-body">
-                  <h5 class="card-title m-0">{{user.titulo}}</h5>
+              <div class="mt-3 card text-center" *ngFor="let user of user.postagem">
+                <div class="row">
+                <div class="col-md-12">
+                <div class="card-body p-0">
+                  <h5 class="card-header m-0">{{user.titulo}}</h5>
                   <small class="text-muted">Tema: {{user.tema.descricao}}</small>
                   <p class="card-text mt-3">{{user.texto}}</p>
-                  <p class="card-text"><small class="text-muted">{{user.data | date: 'dd/MM/yyyy'}} às
-                      {{user.data | date: 'HH:mm'}}</small></p>
+                  <p class="card-text m-0"><small class="text-muted">{{user.data | date: 'dd/MM/yyyy'}} às
+                    {{user.data | date: 'HH:mm'}}</small></p>
+                  <div class="card-footer">
                   <a [routerLink]="['/postagem-edit', user.id]" class="text-info mr-3">Editar</a>
                   <a [routerLink]="['/postagem-delete', user.id]" class="text-danger">Apagar</a>
                 </div>
+                </div>
               </div>
             </div>
+              </div>
           </div>
+
           <div class="tab-pane fade" id="pills-postagensTema" role="tabpanel" aria-labelledby="pills-postagensTema-tab">
-            <div class="card-columns" *ngFor="let tema of listaTemas">
-              <div class="card text-center" *ngFor="let item of tema.postagem">
-                <div class="card-body">
-                  <h5 class="card-title m-0">{{item.titulo}}</h5>
+            <div *ngFor="let tema of listaTemas">
+              <div class="card text-center mt-3" *ngFor="let item of tema.postagem">
+                <div class="row">
+                <div class="col-md-12">
+                <div class="card-body p-0">
+                  <h5 class="card-header m-0">{{tema.descricao}}</h5>
+                  <p class="card-title m-0">{{item.titulo}}</p>
                   <p class="card-text mt-3">{{item.texto}}</p>
-                  <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às
+                  <p class="card-text m-0"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às
                       {{item.data | date: 'HH:mm'}}</small></p>
+                      <div class="card-footer">
                   <p class="card-text"><small class="text-muted">Por: {{item.usuario.nome}}</small></p>
                 </div>
+                </div>
+              </div>
+              </div>
               </div>
             </div>
           </div>
