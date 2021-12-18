@@ -14,7 +14,7 @@
       </div>
       <div class="form-group">
         <label for="Texto">Texto</label>
-        <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
+        <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3" placeholder="Digite o texto"></textarea>
       </div>
       <div class="form-group">
         <label for="Texto">Escolha um Tema <a data-dismiss="modal" routerLink="/tema"></a>:</label>
@@ -24,7 +24,7 @@
       </div>
       <div class="d-flex justify-content-center">
         <button class="btn btn-danger mr-3 mb-3" routerLink="/inicio">Cancelar</button>
-        <button class="btn btn-success mb-3" (click)='atualizar()'>Atualizar</button>
+        <button class="btn btn-dark mb-3" (click)='atualizar()'>Atualizar</button>
       </div>
     </div>
   </div>
