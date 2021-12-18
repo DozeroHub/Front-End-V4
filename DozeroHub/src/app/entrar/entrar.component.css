@@ -5,8 +5,8 @@
 
 
 #img{
-  height: 44%;
-  width: 20%;
+  height: 42%;
+  width: 18%;
   margin-top: 25px
 
 }
@@ -16,9 +16,9 @@
 }
 
 #img-bg{
-  background-image: url('../../assets/8qIqzO5.jpg');
-  min-height: 840px;
-  max-height: 841px;
+  background-image: url('../../assets/img-login-detalhado.svg');
+  min-height: 640px;
+  max-height: 641px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
