@@ -15,6 +15,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class InicioComponent implements OnInit {
 
+  foto = environment.foto
   Tema: Tema = new Tema()
   postagem: Postagem = new Postagem()
   listaTemas: Tema[]
@@ -39,6 +40,7 @@ export class InicioComponent implements OnInit {
     }
     this.getAllTemas()
     this.getAllPostagens()
+    this.findByIdUsuario()
   }
 
   getAllTemas(){

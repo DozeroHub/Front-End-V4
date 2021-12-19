@@ -13,11 +13,8 @@ a{
 }
 
 .fa{
+  padding: 44px;
   color: black;
-}
-
-.fa{
-  padding: 1px;
 }
 
 .fa:hover{
