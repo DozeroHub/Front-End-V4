@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-entrar',
@@ -43,10 +44,16 @@ export class EntrarComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro =>{
       if(erro.status == 401){
-        alert("Usuário ou senha estão incorretos.")
+        Swal.fire({
+          icon: 'error',
+          text: 'Usuário ou senha estão incorretos.',
+        })
       }
       if(erro.status == 500){
-        alert("Insira sua senha.")
+        Swal.fire({
+          icon: 'error',
+          text: 'Insira sua senha!',
+        })
       }
     })
   }

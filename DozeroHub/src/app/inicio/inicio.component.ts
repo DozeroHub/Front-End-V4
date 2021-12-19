@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -35,7 +36,10 @@ export class InicioComponent implements OnInit {
   ngOnInit(){
 
     if(environment.token == ""){
-      alert("Sua sessão expirou, faça login novamente.")
+      Swal.fire({
+        icon: 'info',
+        text: 'Sua sessão expirou, faça login novamente.',
+      })
       this.router.navigate(['/entrar'])
     }
     this.getAllTemas()
@@ -76,7 +80,13 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagens(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      alert("Postagem realizada com sucesso!")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        text: 'Postagem realizada com sucesso!',
+        showConfirmButton: false,
+        timer: 3000
+      })
       this.postagem = new Postagem()
       this.getAllPostagens()
     })

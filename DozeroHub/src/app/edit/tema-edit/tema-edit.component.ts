@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/model/Tema';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-edit',
@@ -36,7 +37,13 @@ export class TemaEditComponent implements OnInit {
   atualizar(){
     this.temaService.putTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert("Tema atualizado com sucesso!")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tema atualizado com sucesso!',
+        showConfirmButton: false,
+        timer: 3000
+      })
       this.router.navigate(['/tema'])
     })
   }

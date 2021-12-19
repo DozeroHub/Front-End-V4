@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema',
@@ -21,12 +22,17 @@ export class TemaComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == ""){
-      alert("Sua sessão expirou, faça login novamente.")
+      Swal.fire({
+        icon: 'info',
+        text: 'Sua sessão expirou, faça login novamente.',
+      })
       this.router.navigate(['/entrar'])
     }
     if(environment.tipo != 'admin'){
-      /*this.alertas.showAlertInfo('Você precisa ser Administrador para ter acesso a essa função')*/
-      alert('Você precisa ser Administrador para ter acesso a essa função')
+      Swal.fire({
+        icon: 'info',
+        text: 'Você precisa ser Administrador para ter acesso a essa função!',
+      })
       this.router.navigate(['/inicio'])
     }
     this.findAllTemas()
@@ -41,7 +47,13 @@ export class TemaComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert("Tema cadastrado com sucesso!")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        text: 'Tema cadastrado com sucesso',
+        showConfirmButton: false,
+        timer: 3000
+      })
       this.findAllTemas()
       this.tema = new Tema()
     })

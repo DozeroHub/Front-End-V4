@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-postagem-delete',
@@ -24,7 +25,10 @@ export class PostagemDeleteComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ""){
-      alert("Sua sessão expirou, faça login novamente.")
+      Swal.fire({
+        icon: 'info',
+        text: 'Sua sessão expirou, faça login novamente.',
+      })
       this.router.navigate(['/entrar'])
     }
     this.idPost = this.route.snapshot.params['id']
@@ -39,7 +43,13 @@ export class PostagemDeleteComponent implements OnInit {
 
   apagar(){
     this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
-      alert("Postagem deletada com sucesso!")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        text: 'Postagem deletada com sucesso!',
+        showConfirmButton: false,
+        timer: 3000
+      })
       this.router.navigate(['/inicio'])
     })
   }
