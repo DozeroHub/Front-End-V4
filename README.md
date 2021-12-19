@@ -11,24 +11,24 @@ Em um estudo da E-bit Nielsen, empresa de mensuração e análise de dados, indi
 Neste contexto, criamos a rede social DO ZERO hub, com o objetivo de proporcionar a inclusão das pessoas em uma rede de contatos de empreendedores que estão no mesmo contexto, gerando insights para uma melhor capacitação em gestão de negócios.
 
 
+ ## 🔗 Link do Projeto
+
 
 
  ## 👾 Time
  
 
 
+Desenvolvedores:
+* [Ana Jorge](https://github.com/anagjorge)
 
-* Scrum Master: [Ana Jorge](https://github.com/anagjorge)
+* [Letícia Ferreira da Silva](https://github.com/lefesi)
 
-* Tech leads: [Letícia Ferreira da Silva](https://github.com/lefesi)
+* [Caroline Santos](https://github.com/Caroline-Calixto)
 
-* UX/UI designer: [Caroline Santos](https://github.com/Caroline-Calixto)
+* [Felipe Lima](https://github.com/Felipepereiralima)
 
-* Desenvolvedores: @Felipe Lima @Letícia Ferreira da Silva @Natan Lopes @Ana Jorge @Caroline Santos
-
-* DB Leads: [Felipe Lima](https://github.com/Felipepereiralima)
-
-* Tester: [Natan Lopes](https://github.com/Natxn)
+* [Natan Lopes](https://github.com/Natxn)
 
   
 
@@ -44,8 +44,16 @@ Neste contexto, criamos a rede social DO ZERO hub, com o objetivo de proporciona
   - [x] Realizar e editar uma postagem 
 
   - [x] Apagar uma postagem
+ 
+ ##
+  Perfil de **Administrador**:
+  - [x] Cadastro e Login 
 
-  - [x] Cadastrar um tema 
+  - [x] Realizar e editar uma postagem 
+
+  - [x] Apagar uma postagem
+  
+  - [x] Cadastro de tema
 
     
 

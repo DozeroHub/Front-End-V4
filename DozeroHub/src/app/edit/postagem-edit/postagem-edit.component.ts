@@ -5,6 +5,7 @@ import { Tema } from 'src/app/model/Tema';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-postagem-edit',
@@ -29,7 +30,10 @@ export class PostagemEditComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ""){
-      alert("Sua sessão expirou, faça login novamente.")
+      Swal.fire({
+        icon: 'info',
+        text: 'Sua sessão expirou, faça login novamente.',
+      })
       this.router.navigate(['/entrar'])
     }
     let id = this.route.snapshot.params['id']
@@ -62,7 +66,13 @@ export class PostagemEditComponent implements OnInit {
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      alert("Postagem atualizada com sucesso!")
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        text: 'Postagem atualizada com sucesso!',
+        showConfirmButton: false,
+        timer: 3000
+      })
       this.router.navigate(['/inicio'])
     })
   }
