@@ -17,8 +17,12 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { MenuLoginComponent } from './menu-login/menu-login.component';
+<<<<<<< HEAD
+import { FaleConoscoComponent } from './fale-conosco/fale-conosco.component';
+=======
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
+>>>>>>> c122bbed4b82171e607d6b1450e50587c2d6ed1d
 
 
 @NgModule({
@@ -35,8 +39,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     PostagemEditComponent,
     PostagemDeleteComponent,
     MenuLoginComponent,
+<<<<<<< HEAD
+    FaleConoscoComponent
+=======
     LandingPageComponent
     
+>>>>>>> c122bbed4b82171e607d6b1450e50587c2d6ed1d
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 #img-bg{
-  background-image: url('../../assets/img-cadastrar.svg');
+  background-image: url('../../assets/img-cadastrar-simples.png');
 
 
   min-height: 825px;
@@ -11,4 +11,8 @@
 
 .btn{
   margin-right: 15px;
+}
+.container-fluid{
+  background-color: #7132bb;
+  overflow: hidden;
 }
