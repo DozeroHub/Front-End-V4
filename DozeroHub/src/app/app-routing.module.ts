@@ -9,13 +9,8 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TemaComponent } from './tema/tema.component';
-<<<<<<< HEAD
 import { FaleConoscoComponent } from './fale-conosco/fale-conosco.component';
-/*import { QuemSomosComponent } from './quem-somos/quem-somos.component';*/
-=======
-/*import { FaleConoscoComponent } from './fale-conosco/fale-conosco.component';*/
 
->>>>>>> c122bbed4b82171e607d6b1450e50587c2d6ed1d
 
 const routes: Routes = [
 
@@ -28,12 +23,9 @@ const routes: Routes = [
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent },
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
-<<<<<<< HEAD
   {path: 'fale-conosco', component: FaleConoscoComponent},
-=======
   {path: 'ladingPage', component: LandingPageComponent},
->>>>>>> c122bbed4b82171e607d6b1450e50587c2d6ed1d
-  /*{path: 'quem-somos', component: QuemSomosComponent}*/
+
 
 ];
 
